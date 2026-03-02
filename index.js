@@ -7,11 +7,12 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
+const cors = require("cors");
+
 app.use(cors({
-  origin: true,
-  credentials: true
-}));
-  credentials: true
+  origin: "https://mealconnectproject.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 app.use(express.json());
 
